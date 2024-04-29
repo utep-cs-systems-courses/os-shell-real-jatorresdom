@@ -38,7 +38,7 @@ chkcmd "cat $_passwd | sort | wc " "2 pipes"
 chkcmd "cat < $_passwd" "redirect input"
 chkcmd "uname > /tmp/x \n cat /tmp/x" "redirect output"
 (echo "sleep 1" ; echo "echo 1") > /tmp/c1
-chkcmd 'bash < /tmp/c1 &\n echo 2 \n sleep 3' "background"
+bash < /tmp/c1 & echo 2; sleep 3;background
 chkcmd 'cd .. \n pwd' "change dir"
 
 echo -e "\n\nResults"
